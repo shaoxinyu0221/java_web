@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航栏练习</title>
+</head>
+<script>
+    function fun(){
+        document.write(Date());
+    }
+</script>
+
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        text-decoration: none;
+        
+    }
+
+    p{
+        margin-top: 10px;
+        
+    }
+
+    .baidu{
+        margin-bottom: -5px;
+    }
+
+</style>
+
+<body>
+    <header>
+        <img src="img/1.gif" alt="">
+    </header>
+    <p>
+        <a href="https://www.baidu.com/" target="_blank" rel="noopener noreferrer">
+            <img src="img/2.png" alt="" class="baidu">百度
+        </a>
+    </p>
+    <p>
+        <a href="https://www.sina.com.cn/" target="_blank" rel="noopener noreferrer">
+            <img src="img/3.ico" alt="" class="baidu">新浪
+        </a>
+    </p>
+    <p>
+        <a href="https://www.sohu.com/" target="_blank" rel="noopener noreferrer">
+            <img src="img/4.jpg" alt="" class="baidu">搜狐
+        </a>
+    </p>
+    <p>
+        <a href="https://www.qq.com/" target="_blank" rel="noopener noreferrer">
+            <img src="img/5.jpg" alt="" class="baidu">腾讯
+        </a>
+    </p>
+    <p><button onclick="fun()">点击</button></p>
+</body>
+</html>

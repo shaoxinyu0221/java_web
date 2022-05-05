@@ -1,0 +1,14 @@
+.img {
+    width: 500px;
+    height: 400px;
+
+}
+
+.box {
+    box-sizing: border-box;
+    border-style: none;
+    float: right;
+    width: 500px;
+    height: 500px;
+    background: red url(/Day01/img/girl.png) center no-repeat;
+}

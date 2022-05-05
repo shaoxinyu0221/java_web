@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运算符</title>
+</head>
+<body>
+    
+    <script>
+        //赋值运算符 =
+        //算数运算符 + - * / %
+        //+ 数值直接做运算,遇到字符串做拼接
+        let a = 100;
+        let b = "99";
+        let c = 2;
+        console.log(a + c);
+        console.log(b + c);
+
+        //关系运算符  > >= < <= == === !=
+        //==(等于)只判断两个变量值是否相等,===(恒等于)同时判断两个变量的值和数据类型是否一致
+        console.log(a == b); //true
+        console.log(a === b); //false
+
+        //逻辑运算符 && || !
+        console.log(true && false);
+        console.log(true || false);
+        console.log(!true);
+
+        //三元运算符
+        let m = a>b?1:2;
+        console.log(m);
+    </script>
+</body>
+</html>
