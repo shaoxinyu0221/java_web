@@ -10,8 +10,10 @@
     <script>
         //输入10个数,找出其中最大的数
         var arr = new Array(10);
+        //prompt输入的是string类型,所以要转换成数值型
         for(var i=0;i<arr.length;i++){
-            arr[i]=prompt("请输入第个"+(i+1)+"数儿")
+            var n = prompt("请输入第个"+(i+1)+"数儿");
+            arr[i] = parseInt(n);
         }
         var max = arr[0];
         for(var i=0;i<arr.length;i++){
@@ -22,7 +24,17 @@
         document.write(arr);
         document.write("<br>");
         document.write(max);
+
+        //用排序进行尝试
+        function sort(a,b){
+            return (a-b);
+        }
+        arr.sort(sort);
+        document.write("<br>");
+        document.write(arr[arr.length-1]);
     </script>
+
+
 </body>
 </html>
 
