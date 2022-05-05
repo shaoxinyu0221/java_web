@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组练习题</title>
+</head>
+<body>
+    <script>
+        //输入10个数,找出其中最大的数
+        var arr = new Array(10);
+        for(var i=0;i<arr.length;i++){
+            arr[i]=prompt("请输入第个"+(i+1)+"数儿")
+        }
+        var max = arr[0];
+        for(var i=0;i<arr.length;i++){
+            if(max < arr[i]){
+                max = arr[i];
+            }
+        }
+        document.write(arr);
+        document.write("<br>");
+        document.write(max);
+    </script>
+</body>
+</html>
+
