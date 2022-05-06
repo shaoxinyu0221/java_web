@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window对象</title>
+</head>
+<body>
+
+    <button onclick="fun1()">点击按钮打开一个新的窗口</button>
+    <button onclick="fun2()">点击按钮关闭当前窗口</button>
+    <script>
+        function fun1(){
+            window.open("https:\\www.baidu.com","_blank");
+        }
+
+        function fun2(){
+            window.close();
+        }
+    </script>
+</body>
+</html>

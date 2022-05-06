@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="fun1()">按钮一</button>
+
+    <button id="two">按钮二</button>
+
+    <button id="three">按钮三</button>
+    
+    <div id="one">
+
+    </div>
+
+    <script>
+        //
+        function fun1(){
+            alert("按钮一被点击了");
+        }
+
+        var n2 = document.getElementById("two");
+        
+        n2.onclick = function(){
+            document.getElementById("one").style.cssText="border:10px solid red;"
+        }
+
+        document.getElementById("three").addEventListener("click",function(){
+            alert("按钮三被点击了");
+        });
+    </script>
+</body>
+</html>

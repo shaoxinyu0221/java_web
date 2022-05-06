@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>核心对象Date</title>
+</head>
+<body>
+    <script>
+        //1.创建Date对象
+        var date = new Date();
+        //获取当前的年月日
+        console.log(date.toLocaleDateString());
+        document.write(date.toLocaleDateString());
+        //获取当前时分秒
+        document.write(date.toLocaleTimeString());
+        document.write("<br>");
+        //获取年月日时分秒
+        document.write(date.toLocaleString());
+        document.write("<br>");
+        //获取一周中的某一天
+        var weekday = date.getDay();
+        if(weekday == 0){
+            weekday = "日";
+        }
+        document.write("今天是星期" + weekday);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建对象
+        var obj = {name:"赵日天", age:100};
+        //输出对象的属性
+        console.log(obj.name);
+        //给对象添加属性
+        obj.sex = "男";
+        console.log(obj.sex);
+        //删除对象的属性
+        delete obj.sex;
+        console.log(obj.sex);
+
+
+        //用数组存储对象
+        var arr = [
+            {name:"赵日天", age:100},
+            {name:"李杀神", age:200}
+        ];
+        //打印
+        console.log(arr[0]);
+        console.log(arr[0].name);
+        //向数组中添加,js中的数组居然可以隔空添加元素
+        arr[3] = {name:"王诛魔", age:200};
+        console.log(arr.length);
+        console.log(arr[2]);
+    </script>
+</body>
+</html>

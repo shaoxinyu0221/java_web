@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+</head>
+<body>
+    <script>
+        //1.验证出现的是否是数字
+        var str1 = "11111";
+        var reg = new RegExp("^\\d*$");
+        console.log(reg.test(str1));
+        //2.验证出现的是否为非数字
+        var str2 = "acnfdkaj";
+        var reg2 = new RegExp("^b\\D*$");
+        console.log(reg2.test(str2));
+        //3.验证一个数字出现0次或者1次
+        var str3 = "12345456";
+        var reg3 = new RegExp("^[0-9]?$");
+        console.log(reg3.test(str3));
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js事件</title>
+    <style>
+        #one {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 单击事件 -->
+    <button onclick="fun1()">按钮一</button>
+    <!-- 双击事件 -->
+    <button ondblclick="fun2()">按钮二</button>
+    <!-- 鼠标移入和移出事件 -->
+    <div id="one" onmouseover="fun3()" onmouseout="fun4()"></div>
+
+    <form action="" onsubmit="fun8()">
+        <!-- 获取焦点事件 -->
+        <input type="text" onfocus="fun5()" onchange="fun6()" onblur="fun7()">
+        <input type="submit" >
+    </form>
+    <script>
+        //普通事件
+        //1.鼠标单击
+        function fun1(){
+            alert("这是一个鼠标单击事件");
+        }
+        //2.鼠标双击时间
+        function fun2(){
+            alert("这是一个鼠标双击事件");
+        }
+        //鼠标移入事件
+        function fun3(){
+            document.getElementById("one").innerHTML="这是一个鼠标移入事件"
+        }
+        //鼠标移出事件
+        function fun4(){
+            document.getElementById("one").innerHTML="这是一个鼠标移出事件"
+        }
+
+
+        //表单事件
+        function fun5(){
+            console.log("获取焦点事件");
+        }
+        function fun6(){
+            console.log("内容该改变时触发");
+        }
+        function fun7(){
+            console.log("失去焦点时触发");
+        }   
+        function fun8(){
+            alert("表单被提交时触发");
+        }
+    </script>
+</body>
+</html>

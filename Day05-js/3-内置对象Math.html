@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内置对象Math</title>
+</head>
+<body>
+    <script>
+        //圆周率
+        console.log(Math.PI);
+        //向上取整
+        var n1 = Math.ceil(3.3);
+        console.log(n1);
+        //向下取整
+        var n2 = Math.floor(3.9);
+        console.log(n2);
+        //四舍五入
+        var n3 = Math.round(3.5);
+        console.log(n3);
+        //0-1之间的随机数
+        var n4 = Math.random();
+        console.log(n4);
+        //取1-10之间的整数,需要用到向上取整
+        var n = Math.ceil(Math.random()*10);
+        console.log(n);
+    </script>
+</body>
+</html>
