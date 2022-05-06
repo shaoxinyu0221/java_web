@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 6、需求
+            创建页面，实现能根据时间显示网页上不同问候语的程序，要求如下：
+            5点以后～8点以前显示早上好！；
+            12点以前显示上午好！；
+            18点以前显示下午好！；
+            21点以前显示晚上好！；
+            23点以前显示祝你晚安！；
+            23点～5点以前显示网虫：该休息了，明天还有课呢！
+            提示：显示上面提示内容可用alert实现！
+            进入页面，页面显示当前时间，且时间是动态更新的。
+            提示：使用定时器函数（setInterval或setTimeout）  -->
+    <div id="time">
+        
+    </div>
+
+    <script>
+        var date = new Date();
+        var hour = date.getHours();
+        setInterval(function(){
+            var date2 = new Date();
+            var time = date2.toLocaleTimeString();
+            document.getElementById("time").innerHTML = time;
+        },1000)
+        if(hour>5 && hour<=8){
+            alert("早上好");
+        }else if(hour<=12){
+            alert("上午好");
+        }else if(hour<=18){
+            alert("下午好");
+        }else if(hour<=21){
+            alert("晚上好");
+        }else if(hour<=23){
+            alert("祝你晚安");
+        }else{
+            alert("网虫：该休息了，明天还有课呢！");
+        }
+    </script>
+</body>
+</html>

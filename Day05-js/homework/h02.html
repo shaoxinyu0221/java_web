@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+        <p>请输入要格式化的数字</p>
+        <input type="text" id="number"><br>
+        <p>请输入要格式化的长度</p>
+        <input type="text" id="length" ><br>
+        <p>格式化后的数字</p>
+        <input type="text" value="" id="last"><br>
+        <input type="submit" value="转化" onclick="fun()"><input type="reset" value="重置">
+
+
+
+
+    <script>
+        function fun(){
+            var number = document.getElementById("number").value;
+            var length = document.getElementById("length").value;
+            var n = parseInt(number.length - length);
+            console.log(n);
+            console.log(typeof(number));
+            if(n>0){
+                alert("长度错误");
+            }else{
+                n = Math.abs(n);
+                for(var i=1;i<=n;i++){
+                    number = "0" + number;
+                }
+                document.getElementById("last").value = number;
+                console.log(number);
+            }
+        }
+    </script>
+</body>
+
+</html>
