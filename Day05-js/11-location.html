@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button onclick="fun1()">点此刷新页面</button>
+
     <script>
         location.hash="1111";
         console.log(location.hash);
@@ -16,6 +17,13 @@
         //获取当前网页的完整地址
         console.log(location.href);
         //获取url中的路径部分
+        console.log(location.pathname);
+
+
+        //充新加载页面
+        function fun1(){
+            location.reload();
+        }
     </script>
 
 
