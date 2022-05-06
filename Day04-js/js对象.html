@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js对象</title>
+</head>
+<body>
+    <script>
+        //1.用function 创建对象
+        function person (name,age){
+            this.name = name;
+            this.age = age;
+        }
+        var obj1 = new person("赵日天",200);
+        document.write(obj1.name);
+
+        //2.用object创建对象
+        var obj2 = new Object();
+        obj2.name = "李杀神";
+        obj2.age = 111;
+        document.write(obj2.name);
+        document.write(obj2.age);
+
+        //3.手写一个js对象
+        var obj3 = {name:"王诛魔",age:1233};
+        document.write(obj3.name);
+        document.write(obj3.age);
+    </script>
+</body>
+</html>
+
