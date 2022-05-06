@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var price = prompt("淘宝网竞拍,请出一口价");
+        var oldPrice = (Math.random()*500)+500;
+        if(price>oldPrice){
+            document.write("拍卖价格" + oldPrice);
+            document.write("恭喜您以最高价拍卖成功");
+        }else{
+            document.write("不是最高价,竞拍失败");
+        }
+
+        alert("欢迎下次光临!");
+    </script>
+</body>
+</html>

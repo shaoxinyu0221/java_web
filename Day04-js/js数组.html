@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js数组</title>
+</head>
+<body>
+    <!-- js创建数组 -->
+    <script>
+        //1.创建一个空数组
+        var arr1 = new Array();
+        document.write(arr1.length + "<br>");
+        //2.创建一个长度为10的数组
+        var arr2 = new Array(10);
+        document.write(arr2.length + "<br>");
+        //3.创建一个长度为4,元素为10,20,30,40的数组
+        var arr3 = new Array(10,20,30,40);
+        document.write(arr3);
+        //4.创建一个数组,元素为1,2,3,4,5
+        var arr4 = [1,2,3,4,5];
+        document.write(arr4);
+    </script>
+    <!-- 数组的方法 -->
+    <script>
+        //1.获取数组长度
+        arr3.length;
+        //2.数组反转
+        document.write(arr4.reverse());
+        //3.将数组转换成字符串,元素之间按照制定符号间隔
+        var string = arr4.join("-");
+        document.write(string);
+        //4.数组排序,sort排序本身不准确,但是可以通过函数来进行排序,类似于java中的比较器
+        function ArraySort(a,b){
+            return (b-a);
+        }
+        arr3.sort(ArraySort);
+        document.write(arr3);
+    </script>
+    <!-- 数组的基本操作 -->
+    <script>
+        //增
+        arr3[4] = 100;
+        //删,删除数组中的最后一个元素,并返回
+        arr3.pop();
+    </script>
+</body>
+</html>
