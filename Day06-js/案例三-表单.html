@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校验表单</title>
+
+</head>
+
+<body>
+    <form action="" onsubmit="return fun()">
+        <table border="1" width="600px" height="400px" cellpadding="0px" cellspacing="0px">
+            <tr>
+                <td>用户名:</td>
+                <td><input type="text" name="username" placeholder="请输入用户名" onblur="regExpUser()" /></td>
+                <td width="200px"><span></span></td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td><input type="password" name="username" placeholder="请输入密码" onblur="regExpPwd()" /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>再次输入密码:</td>
+                <td><input type="password" name="username" placeholder="再次输入密码" onblur="regExpPwd2()" /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>电子邮件:</td>
+                <td><input type="email" name="username" placeholder="请输入电子邮件" onblur="regExpEmail()" /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>性别:</td>
+                <td>
+                    <input type="radio" name="sex" id="man" value="男"><label for="man">男</label>
+                    <input type="radio" name="sex" id="woman" value="女"><label for="woman">女</label>
+                </td>
+            </tr>
+            <tr>
+                <td>图像:</td>
+                <td><input type="file" name="" id=""></td>
+            </tr>
+            <tr>
+                <td>爱好:</td>
+                <td>
+                    <label for="b">篮球:</label><input type="checkbox" name="hobby" id="b">
+                    <label for="f">足球:</label><input type="checkbox" name="hobby" id="f">
+                    <label for="c">攀岩:</label><input type="checkbox" name="hobby" id="c">
+                </td>
+            </tr>
+            <tr>
+                <td>喜欢的城市:</td>
+                <td>
+                    <select name="city" id="city">
+                        <option value="1">湖北</option>
+                        <option value="1">四川</option>
+                    </select>
+                </td>
+
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <input type="submit" value="同意服务条件,提交注册信息">
+                    <input type="reset" value="重置">
+                </td>
+
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        //获取所有input标签
+        var inputs = document.getElementsByTagName("input");
+        function fun(){
+            
+
+
+
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom添加元素</title>
+    <style>
+        #parent {
+            border: 1px solid red;
+        }
+        #son1 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+	<!--向父元素的最末端添加新元素-->
+    <div id="parent">
+        <div id="son1"></div>
+    </div>
+	
+    <script>
+        //新建元素
+        var newDiv = document.createElement("div");
+        //设置新元素的样式
+        newDiv.style.cssText = "width:100px; height:100px; background-color: red;"
+        //获取父节点
+        var parent = document.getElementById("parent");
+        //用父节点的方法将新元素添加到页面中
+        parent.appendChild(newDiv);
+    </script>
+    
+    <!--向指定位置插入新元素-->
+    <div id="parent2" style="border: 1px solid red;">
+    	<p id="java">Java</p>
+    	<p id="python">Python</p>
+    	<p id="html">Html</p>
+    </div>
+    
+    <script type="text/javascript">
+    	//创建一个新元素
+    	var newP = document.createElement("p");
+    	//设置新元素的属性
+    	newP.innerText = "Css";
+    	//获取要插入位置的元素
+    	var java = document.getElementById("java");
+    	//获取父元素
+    	var parent2 = document.getElementById("parent2");
+    	//调用父元素的方法
+    	parent2.insertBefore(newP,java)
+    </script>
+    
+</body>
+</html>

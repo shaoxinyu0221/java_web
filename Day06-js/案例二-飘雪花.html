@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飘雪花</title>
+    <style>
+        body {
+            background: url(img/bg.jpg) no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+
+        .button {
+            position: fixed;
+            top: 0;
+        }
+        .sun {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <marquee behavior="" direction="">
+        <div class="sun"></div>
+    </marquee>
+
+    <!-- 添加按钮 -->
+    <div class="button">
+        <button onclick="add()">添加</button>
+        <button onclick="del()">删除</button>
+        <button onclick="start()">开始</button>
+        <button onclick="stop()">停止</button>
+    </div>
+
+    <script>
+
+        function createSnow() {
+            //创建雪花
+            var img = document.createElement("img");
+            img.src = "img/snow.png";
+            img.style.cssText = "width: 100px; height: 100px; position: absolute;"
+            //设置位置随机
+            img.style.top = Math.random() * innerHeight + "px";
+            img.style.left = Math.random() * innerWidth + "px";
+
+            //添加到body
+            document.body.appendChild(img);
+        }
+
+        function add() {
+            //添加30个雪花
+            for (var i = 1; i <= 30; i++) {
+                createSnow();
+            }
+        }
+        
+        function del() {
+            //获取雪花元素
+           var list = document.getElementsByTagName("img");
+           for(var i=list.length-1;i>=0;i--){
+                list[i].remove();
+           }
+        }
+
+        function modImg() {
+            //获取img当前位置
+            var imgs = document.getElementsByTagName("img");
+            for (var i = 0; i < imgs.length; i++) {
+                var aimg = imgs[i];
+                var top = aimg.style.top;
+                //在当前纵坐标的基础上加10px
+                top = parseInt(top.substring(0, top.length - 2)) + 1 + "px";
+                //修改雪花的属性
+                aimg.style.top = top;
+            }
+        }
+
+        var time;
+        function start() {
+            time = setInterval('modImg()',10);
+        }
+
+        function stop() {
+            clearInterval(time);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>读取其他网页存储的数据</title>
+</head>
+<body>
+    <script>
+        //读取本地存储的数据,获取到的是json字符串
+        var json = localStorage.getItem("user");
+        //将json字符串转js对象
+        var js = JSON.parse(json);
+        //遍历
+        for(var i=0;i<js.length;i++){
+            console.log(js[i]);
+        }
+    </script>
+</body>
+</html>

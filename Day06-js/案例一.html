@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>添加菜品,名字不能重复</title>
+	</head>
+	<body>
+		<span>请输入菜品:</span><input id="case" type="text"/><br />
+		<button id="add" onclick="fun()">添加</button>
+
+		<ul id="myul">
+			<li>梅菜扣肉</li>
+			<li>回锅肉</li>
+			<li>水煮鱼</li>
+		</ul>
+
+
+		
+		<script>
+			function fun(){
+				var myul = document.getElementById("myul")
+				var list = myul.getElementsByTagName("li");
+				var add = document.getElementById("case").value;
+				for(var i=0;i<list.length;i++){
+					if(list[i].innerText == add || add==""){
+						alert("菜品重复或为空");
+						return;
+					}
+				}
+				//添加
+				var newLi = document.createElement("li");
+				newLi.innerText = add;
+				myul.appendChild(newLi);
+			}
+		</script>
+		
+	</body>
+</html>

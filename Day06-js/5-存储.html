@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>存储</title>
+</head>
+<body>
+    <script>
+        //1.会话存储,将数据存储到浏览器中,关闭浏览器数据消失
+        sessionStorage.setItem("user","admin");
+        //2.读数据
+        // var user = sessionStorage.getItem("user");
+        // alert(user);
+    </script>
+
+    <script>
+        //本地存储,将数据存储到本地,理论上永久保存
+        var userInfo = [
+            {"username":"1001","password":"123456"},
+            {"username":"1001","password":"123456"},
+            {"username":"1001","password":"123456"}
+        ];
+        //对象转JSON字符串
+        var json = JSON.stringify(userInfo);
+        //以字符串形式将JSON进行本地储存
+        localStorage.setItem("user",json);
+    </script>
+
+    <!-- 在其他网页读取 -->
+</body>
+</html>

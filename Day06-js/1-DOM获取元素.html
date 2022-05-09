@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--1.根据id获取元素-->
+		<input type="text" id="input1" value="教育改变生活1" /><br />
+		<input type="text" id="input2" value="教育改变生活2" /><br /> 
+		<script type="text/javascript">
+			var input1 = document.getElementById("input1");
+			var input2 = document.getElementById("input2");
+			console.log(input1.value);
+			console.log(input2.value);
+		</script>
+		<!--2根据标签名获取元素-->
+		<input type="text" value="教育改变生活1" /><br />
+		<input type="text" value="教育改变生活2" /><br />
+		<input type="text" value="教育改变生活3" /><br />
+		<input type="text" value="教育改变生活4" /><br />
+		<script type="text/javascript">
+			//通过标签获取元素的方法,返回值是一个数组
+			var list = document.getElementsByTagName("input");
+			for(var i=0;i<list.length;i++){
+				console.log(list[i].value);
+			}
+			//可以通过标签名获取页面所有元素
+			var listAll = document.getElementsByTagName("*");
+			console.log(listAll.length)
+		</script>
+		<!--3根据class获取元素-->
+		<input type="text" class="uname" value="教育改变生活1" /><br />
+		<input type="text" class="uname" value="教育改变生活2" /><br />
+		<input type="text" class="uname" value="教育改变生活3" /><br />
+		<input type="text" class="uname" value="教育改变生活4" /><br />
+		<script type="text/javascript">
+			//通过class名获取元素,返回值是数组
+			var list = document.getElementsByClassName("uname");
+			for(var i=0;i<list.length;i++){
+				console.log(list[i].value);
+			}
+		</script>
+		
+		<!--4.根据name获取元素-->
+		<input type="text" name="uname" value="教育改变生活1" /><br />
+		<input type="text" name="uname" value="教育改变生活2" /><br />
+		<input type="text" name="uname" value="教育改变生活3" /><br />
+		<input type="text" name="uname" value="教育改变生活4" /><br />
+		<script type="text/javascript">
+			//通过name属性获取元素,返回值是一个数组
+			var list = document.getElementsByName("uname");
+			for(var i=0;i<list.length;i++){
+				console.log(list[i].value);
+			}
+		</script>
+		<!--5在指定元素之内，根据标签名获取元素-->
+		<ul id="dd1">
+		    <li>xx</li>
+		    <li>yy</li>
+		    <li>zz</li>
+		</ul>
+		
+		
+		<ul id="dd2">
+		    <li>aa</li>
+		    <li>bb</li>
+		    <li>cc</li>
+		</ul>
+		<script type="text/javascript">
+			//1.获取父元素对象
+			var parentUl = document.getElementById("dd1");
+			//2.通过父元素对象获取子元素
+			var list = parentUl.getElementsByTagName("li");
+			for(var i=0;i<list.length;i++){
+				console.log(list[i].innerText);
+			}
+		</script>
+		
+	</body>
+
+</html>
