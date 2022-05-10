@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二级下拉菜单联动</title>
+</head>
+<body onload="loadPro()">
+    <span>省份:</span>
+    <select name="province" id="province" onchange="addCity()">
+        <option value="">请选择</option>
+    </select>
+    <span>城市:</span>
+    <select name="city" id="city">
+        <option value="">请选择</option>
+    </select>
+
+
+    <script>
+        //1.准备好数据
+        var list = [
+            {"name":"北京市","city":["北京市"]},
+            {"name":"上海市","city":["上海市"]},
+            {"name":"湖北省","city":["武汉市","荆州市","襄阳市"]},
+            {"name":"河北省","city":["张家口","秦皇岛","承德市"]}
+        ];
+
+
+        function loadPro(){
+            //1.获取相应的下拉列表对象
+            let province = document.getElementById("province");
+            //2.循环创建option,并赋值,添加
+            for(let i=0;i<list.length;i++){
+                let opt = document.createElement("option");
+                //赋值
+                opt.value = list[i].name;
+                opt.innerText = list[i].name;
+                //添加
+                province.appendChild(opt);
+            }
+        }
+
+        //根据所选择的省份,添加城市
+        function addCity(){
+            //1.首先要知道选择的是哪个省份,获取被选项的下标
+            let province = document.getElementById("province");
+            let index = province.selectedIndex;
+
+            let city = document.getElementById("city");
+
+            //
+            if(index == 0){
+                city.length = 1;
+                return;
+            }
+
+            index -=  1; 
+            //2.根据下标选择list数组中对应下标的city
+            let cityList = list[index].city;
+            //3.循环创建option,赋值,添加
+            
+            //4.每次添加新元素前,清空上次添加的元素
+            city.length = 1;
+            for(var i=0;i<cityList.length;i++){
+            	let opt = document.createElement("option");
+            	opt.value = cityList[i];
+            	opt.innerText = cityList[i];
+            	city.appendChild(opt);
+            }
+        }
+
+    </script>
+</body>
+</html>

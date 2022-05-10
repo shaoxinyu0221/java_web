@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二级下拉列表</title>
+</head>
+<body onload="loadProvince()">
+    <span>省份:</span>
+    <select name="province" id="province" onchange="loadCity()">
+        <option value="">请选择省份</option>
+    </select>
+
+    <span>城市:</span>
+    <select name="city" id="city">
+        <option value="">请选择城市</option>
+    </select>
+
+    <script>
+        var list = [
+            {"name":"北京市","city":["北京市"]},
+            {"name":"上海市","city":["上海市"]},
+            {"name":"湖北省","city":["武汉市"]},
+            {"name":"湖南省","city":["长沙市"]}
+        ]
+
+        function loadProvince(){
+            
+            for(let i=0;i<list.length;i++){
+                let opt = document.createElement("option");
+                opt.innerText = list[i].name;
+                opt.value = list[i].name;
+                document.getElementById("province").appendChild(opt);
+            }
+        }        
+
+        function loadCity(){
+            var index = document.getElementById("province").selectedIndex-1;
+            var city = document.getElementById("city");
+            if(index == -1){
+                city.length = 1;
+                return;
+            }   
+            var cityList = list[index].city;
+            city.length = 1;
+            for(var i=0;i<cityList.length;i++){
+                var opt = document.createElement("option");
+                opt.value = cityList[i];
+                opt.innerText = cityList[i];
+                city.appendChild(opt);
+            }
+
+        }
+
+    </script>
+</body>
+</html>

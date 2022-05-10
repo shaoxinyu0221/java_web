@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .scroll {
+            width: 728px;
+            height: 267px;
+            position: relative;
+        }
+        .picture {
+            width: 728px;
+            height: 267px;
+            overflow: hidden;
+        }
+
+        .index {
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            color: aliceblue;
+            position: absolute;
+            top: 210px;
+        }
+        .list {
+            width: 400px;
+            border: 1px solid;
+            margin-top: 50px;
+        }
+        .list .top .left{
+            text-align: center;
+            line-height: 50px;
+            width: 199px;
+            height: 50px;
+            float: left;
+            border: 1px solid;
+        }
+        
+        .list .top .right {
+            text-align: center;
+            line-height: 50px;
+            width: 199px;
+            height: 50px;
+            float: right; 
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll" id="scroll">
+        <div class="picture">
+            <img src="img/scroll-01.jpg" alt="">
+            <img src="img/scroll-02.jpg" alt="">
+            <img src="img/scroll-03.jpg" alt="">
+            <img src="img/scroll-04.jpg" alt="">
+        </div>
+
+        <div class="index" style="right: 190px;" id="index1" onmouseover="fun(this)" onmouseout="fun2(this)">1</div>
+        <div class="index" style="right: 130px;" id="index2" onmouseover="fun(this)" onmouseout="fun2(this)">2</div>
+        <div class="index" style="right: 70px;"  id="index3" onmouseover="fun(this)" onmouseout="fun2(this)">3</div>
+        <div class="index" style="right: 10px;"  id="index4" onmouseover="fun(this)" onmouseout="fun2(this)">4</div>
+    </div>
+
+    <div>
+        <div class="list">
+            <div class="top">
+                <div class="left" onmouseover="fun3('sale')">图书畅销榜</div>
+                <div class="right" onmouseover="fun3('new')">图书上新榜</div>
+            </div>
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td><img src="img/selling01.jpg" alt="" id="p1"></td>
+                    <td id="t1" style="border-bottom: 1px solid black;">
+                        <h4 id="h1">追风筝的人</h4>
+                        <span id="s1">中文版,快乐大本营高圆圆感动推荐,奥巴马送给女儿的新年礼物</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td id="t2" style="border-bottom: 1px solid black;" colspan="2">解忧杂货店</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td id="t3">天才在左,疯子在右</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td id="t4">白夜行</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td id="t5">阮/陈恩静 吕亦涵 著</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td id="t6">摆渡人</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td id="t7">岛上书店</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td id="t8">百年孤独</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td id="t9">我们仨</td>
+                </tr>
+                <tr>
+                    <td>10</td> 
+                    <td id="t10">从你的全世界路过</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+        function fun(e){
+            var imgs = document.getElementById("scroll").getElementsByTagName("img");
+            for(let i=0;i<imgs.length;i++){
+                if(i == e.innerText - 1){
+                    imgs[i].style.display = "block";
+                    e.style.background = "red";
+                }else{
+                    imgs[i].style.display = "none";
+                }
+            }
+        }
+
+        function fun2(e){
+            e.style.background = "";
+        }
+
+
+
+        function fun3(name){
+            if(name == 'sale'){
+                document.getElementById("p1").src = "img/selling01.jpg";
+                document.getElementById("h1").innerText = "追风筝的人";
+                document.getElementById("s1").innerText = "中文版,快乐大本营高圆圆感动推荐,奥巴马送给女儿的新年礼物";
+            }
+            if(name == 'new'){
+            	document.getElementById("p1").src = "img/newBook01.jpg";
+            	document.getElementById("h1").innerText = "好吗好的";
+            	document.getElementById("s1").innerText = "凡8月12日20:00前下单顾客,100%有大冰亲笔签名,之后下单的顾客先到先得签名,各仓到货时间不一致,请耐心等待";
+            }
+        }
+
+
+    </script>
+</body>
+</html>

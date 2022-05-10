@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        #ad {
+            width: 360px;
+            height: 190px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ad">
+        <img src="img/ad-01.jpg" alt="">
+        <img src="img/ad-02.jpg" alt="">
+        <img src="img/ad-03.jpg" alt="">
+        <img src="img/ad-04.jpg" alt="">
+    </div>
+
+
+    <script>
+        //children只返回元素节点,只返回标签
+        var imgs = document.getElementById("ad").children;
+        //childNodes 返回元素节点和文本内容
+
+        var index = 0;
+        setInterval(function () {
+            for (let i = 0; i < imgs.length; i++) {
+                if (index == i) {
+                    imgs[index].style.display = "block";
+                } else {
+                    imgs[i].style.display = "none";
+                }
+            }
+            index++;
+            if (index == imgs.length) {
+                index = 0;
+            }
+        }, 1000)
+
+
+    </script>
+</body>
+
+</html>

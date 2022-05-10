@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div{
+            border: 1px solid red;
+        }
+        .main {
+            width: 200px;
+            height: 300px;
+        }
+        .top {
+            height: 60px;
+        }
+        .middle{
+            height: 150px;
+        }
+        .foot{
+            height: 90px;
+        }
+        .top .left{
+            height: 100%;
+            width: 90px;
+            float: left;
+        }
+        .top .right{
+            height: 100%;
+            width: 90px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="top" id="top">
+            <div class="left" onmouseover="fun('left')" id="left" onmouseout="out(this)"></div>
+            <div class="right" onmouseover="fun('right')" id="right" onmouseout="out(this)"></div>
+        </div>
+        <div class="middle" id="middle"></div>
+        <div class="foot" id="foot"></div>
+    </div>
+
+
+    <script>
+        function fun(name){
+            var middle = document.getElementById("middle");
+            var left = document.getElementById("left");
+            var right = document.getElementById("right");
+            if(name == 'left'){
+                left.style.background = "red";
+                middle.style.background = "red";
+                right.style.background = "yellow";
+            }else{
+                left.style.background = "yellow";
+                middle.style.background = "yellow";
+                right.style.background = "red";
+            }
+        }
+
+        function out(e){
+            var middle = document.getElementById("middle");
+            var left = document.getElementById("left");
+            var right = document.getElementById("right");
+            left.style.background = "";
+            middle.style.background = "";
+            right.style.background = "";
+        }
+    </script>
+</body>
+</html>
