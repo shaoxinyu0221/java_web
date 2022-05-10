@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <style>
+        .container-fluid {
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="col-lg-1" style="height: 100%; background-color: red;"></div>
+        <div class="col-lg-1" style="height: 100%; background-color: blue;"></div>
+        <div class="col-lg-1" style="height: 100%; background-color: yellow;"></div>
+        <div class="col-lg-1" style="height: 100%; background-color: blueviolet;"></div>
+    </div>
+
+
+    <!-- 标准写法:把div当做表格进行布局 -->
+    <!-- class="container-fluid"看做是table -->
+    <div class="container-fluid">
+        <!-- class="row"看做是行(tr) -->
+        <div class="row" style="height: 100%;">
+            <!-- class="col-lg-12"看作是列(td) -->
+            <div class="col-lg-3" style="height: 100%; background-color: red;"></div>
+            <div class="col-lg-3" style="height: 100%; background-color: blue;"></div>
+            <div class="col-lg-3" style="height: 100%; background-color: yellow;"></div>
+            <div class="col-lg-3" style="height: 100%; background-color: blueviolet;"></div>
+        </div>
+
+        <div class="row" style="height: 100%;">
+            <div class="col-lg-3" style="height: 100%; background-color: pink;"></div>
+            <div class="col-lg-3" style="height: 100%; background-color: orange"></div>
+            <div class="col-lg-3" style="height: 100%; background-color: purple;"></div>
+            <div class="col-lg-3" style="height: 100%; background-color: palevioletred;"></div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</body>
+</html>
